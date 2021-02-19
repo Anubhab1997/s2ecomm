@@ -1,0 +1,81 @@
+<script type="text/javascript">
+      
+  $(document).ready(function(){
+    $('#user-check').hide();
+    $('#pass-check').hide();
+    $('#user-check2').hide();
+    $('#pass-check2').hide();
+    $('#pass-check3').hide();
+
+    var usr_err = true ;
+    var usr_err2 = true ;
+    var pass_err = true;
+    var pass_err2 = true;
+    var pass_err3 = true;
+
+    $('#username').keyup(function(){
+        usernameac();
+    });
+         function  usernameac(){
+
+            var username1_val = $('#username').val();
+         
+          if(username1_val.length =='')
+          {
+            $('#user-check').show();
+            $('#user-check').html("**Please fill the user name");
+            $('#user-check').focus();
+            $('#user-check').css("color","red");
+            var usr_err = false ;
+            return false;
+          }else{
+            $('#user-check').hide();
+          }
+
+          if((username1_val.length < 3) || (username1_val.length > 20))
+          {
+            $('#user-check').show();
+            $('#user-check').html("**username must be between 3-20");
+            $('#user-check').focus();
+            $('#user-check').css("color","red");
+            var usr_err = false ;
+            return false;
+          }else{
+            $('#user-check').hide();
+          }
+
+        }
+        $('#password').keyup(function(){
+            passchk();
+        });
+
+        function  passchk(){
+            var passchk_val1 = $('#password').val();
+           if (passchk_val1 == '')
+           {
+            $('#pass-check').show();
+            $('#pass-check').html("**Password cannot be blank");
+            $('#pass-check').focus();
+            $('#pass-check').css("color","red");
+            var pass_err = false ;
+            return false;
+          }else{
+            $('#pass-check').hide();
+          }
+          if((passchk_val1.length < 3) || (passchk_val1.length > 20))
+          {
+            $('#pass-check').show();
+            $('#pass-check').html("**username must be between 3-20");
+            $('#pass-check').focus();
+            $('#pass-check').css("color","red");
+            var usr_err = false ;
+            return false;
+          }else{
+            $('#pass-check').hide();
+          }
+
+
+         }
+
+        
+  });

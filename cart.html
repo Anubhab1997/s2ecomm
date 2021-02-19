@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    
+    <title>All </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    
+
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo1.png" width="125px">
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li> <a href="first.html">Home</a> </li>
+                        <li> <a href="products.html">Products</a> </li>
+                        <li> <a href="">Contacts</a> </li>
+                        <li> <a href="account-customer.html">Account</a> </li>
+                        <li> <a href="">About</a> </li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" class="cart"></a>
+                <img src="images/menuicon.png" class="menu-icon" onclick="menutoggle()" >
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------Cart Items Detail===============-->
+
+<div class="small-container cart-page">
+    <table>
+        <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Sub-total</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/images2/1-1.jpg">
+                    <div>
+                        <p>Nike T-shirt</p>
+                        <small>20$</small><br>
+                        <a href="" style="color: red; font-size: 12px;">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value ="1"></inout></td>
+            <td>20$</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/cart2.png">
+                    <div>
+                        <p>Samsung Galaxy S10</p>
+                        <small>420$</small><br>
+                        <a href="" style="color: red; font-size: 12px;">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value ="1"></inout></td>
+            <td>420$</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/cart3.jpg">
+                    <div>
+                        <p>Iphone 12</p>
+                        <small>720$</small><br>
+                        <a href="" style="color: red; font-size: 12px;">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value ="1"></inout></td>
+            <td>720$</td>
+        </tr>
+    </table>
+    
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Sub-total</td>
+                <td>1140$</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>40$</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>1140$</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+        
+
+<!--------------FOOTER ----------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and IOS mobile</p>
+                <div class="app-logo">
+                    <img src="images/applo.png">
+                </div>
+            </div>
+            <div class="footer-col-2" style="float: left;">
+                <img src="images/logo01.png">
+                <p>Seven Seas E-commerce Ltd. ,buy exclusive with utmost satisfaction </p>
+            </div>
+            <div class="footer-col-3" style="float: right;">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog posts</li>
+                    <li>Return policy</li>
+                    <li>Join affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4" style="float: right;">
+                <h3>Follow us </h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>YouTube</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+         <hr>
+        <p class= "Copyright">Copy-Right Anubhab &#xa9 </p>
+    </div>
+</div>
+<!-----JS FOR TOGGLE MENU----------------------------->
+<script>
+    var menuitems = doc.getElementById("menuitems")
+    menuitems.style.maxHeight = "0px" ;
+    function menutoggle(){
+        if (menuitems.style.maxHeight == "0px")
+        {
+            menuitems.style.maxHeight = "200px" ;
+        }
+        else
+        {
+            menuitems.style.maxHeight = "0px" ;
+        }
+    }
+</script>
+<!-------------------------JS FOR Product gallery------------>
+
+</body>
+
+</html>

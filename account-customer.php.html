@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    
+    <title>All </title>
+</head>
+ <?php  
+ include 'links.php' ;
+ ?>
+
+</head>
+
+<body>
+
+    
+
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo1.png" width="125px">
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li> <a href="first.html">Home</a> </li>
+                        <li> <a href="products.html">Products</a> </li>
+                        <li> <a href="">Contacts</a> </li>
+                        <li> <a href="account-customer.html">Account</a> </li>
+                        <li> <a href="">About</a> </li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" class="cart"></a>
+                <img src="images/menuicon.png" class="menu-icon" onclick="menutoggle()" >
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------account page===============-->
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/logo1.png" style="padding-left: 300px;">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()"> Login</span>
+                        <span onclick="register()"> Register</span>
+                        <hr id="indicator">
+                    </div>
+                    <form id ="LoginForm">
+                        <input type="email"  id="username">
+                        <span id="user_check" style="width: 200px !important;color: red;"></span>
+                        <input type="password" placeholder="password" id="password">
+                        <span id="pass_check"  style="width: 200px !important;color: red;"></span>
+                        <select>
+                            <option>Admin</option>
+                            <option>Customer</option>
+                        </select>
+                        <input type="submit" class="btn" id="loginb" value="Login">
+                        <a href="" style ="font-weight:normal; font-size: smaller;">Forgot password</a>
+                    </form>
+                    
+                    <form id ="RegForm">
+                        <input type="text" placeholder="Enter Full Name" id="username20" >
+                        <input type="text" placeholder="Enter Email ID" id="username2" >
+                        <span id="user_check2" style="width: 200px !important;color: red;"></span>
+                        <input type="password" placeholder="Set password" id="password2">
+                        <span id="pass_check2"  style="width: 200px !important;color: red;"></span>
+                        <input type="text" placeholder="confirm password" id="password3">
+                        <span id="pass_check3" style="width: 200px !important;color: red;"></span>
+                        <input id="pin" type="text" placeholder="Pincode">
+                        
+                        
+
+                        <select>
+                            <option>Admin</option>
+                            <option>Customer</option>
+                        </select>
+                        <a href="admin.html" class="btn">Register</a>
+                        <p style="text-align: center; color: silver;">Or</p><br>
+                        <a href="" ><img src="images/facebooklogo.jpg" style="padding: 0%; width: 40px;height: 40px;"> </a>&nbsp;&nbsp;
+                        <a href="" ><img src="images/gmaillogo.jpg" style="padding: 0%; width: 40px;height: 40px;"> </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        
+
+<!--------------FOOTER ----------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and IOS mobile</p>
+                <div class="app-logo">
+                    <img src="images/applo.png">
+                </div>
+            </div>
+            <div class="footer-col-2" style="float: left;">
+                <img src="images/logo01.png">
+                <p>Seven Seas E-commerce Ltd. ,buy exclusive with utmost satisfaction </p>
+            </div>
+            <div class="footer-col-3" style="float: right;">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog posts</li>
+                    <li>Return policy</li>
+                    <li>Join affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4" style="float: right;">
+                <h3>Follow us </h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>YouTube</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+         <hr>
+        <p class= "Copyright">Copy-Right Anubhab &#xa9 </p>
+    </div>
+</div>
+<!-----JS FOR TOGGLE MENU----------------------------->
+<script>
+    var menuitems = document.getElementByID("menuitems");
+    menuitems.style.maxHeight = "0px" ;
+    function menutoggle(){
+        if (menuitems.style.maxHeight == "0px")
+        {
+            menuitems.style.maxHeight = "200px" ;
+        }
+        else
+        {
+            menuitems.style.maxHeight = "0px" ;
+        }
+    }
+</script>
+<!-------------------------JS FOR toggle form------------>
+
+<script>
+
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var indicator = document.getElementById("indicator");
+
+      function register(){
+          RegForm.style.transform = "translateX(0px)";
+          LoginForm.style.transform = "translateX(0px)";
+          indicator.style.transform = "translateX(100px)";
+         
+      }
+      function login()
+      {
+          RegForm.style.transform = "translateX(300px)";
+          LoginForm.style.transform = "translateX(300px)";
+          indicator.style.transform = "translateX(0px)";
+         
+      }
+
+
+
+</script>
+<!---------------------------------VALIDATION JQ------------------------>
+
+
+<script type="text/javascript">
+
+$("#user_check").hide();
+$("#pass_check").hide();
+$("#user_check2").hide();
+$("#pass_check2").hide();
+$("#pass_check3").hide();
+
+
+var error_password= false ;
+var error_username = false;
+var error_username2 = false;
+var error_password2= false;
+var error_password3= false;
+
+
+
+$("#username").focusout(function(){
+    checkuem();
+});
+$("#password").focusout(function(){
+    checkpass();
+});
+$("#username2").focusout(function(){
+    checkuem2();
+});
+$("#password2").focusout(function(){
+    checkpass2();
+});
+$("#password3").focusout(function(){
+    checkpass3();
+});
+
+function checkuem(){
+        var pattern = /^[A-Za-z0-9\d=!\-@._*]*$/;
+        var chkem =$("#username").val()
+        if(pattern.test(chkem) && chkem!==''){
+            $("#user_check").hide();
+            $("#username").css("border","2px solid #34F458");
+        }else{
+            $("#user_check").html("Invalid email");
+            $("#user_check").show();
+            $("#username").css("border","2px solid #F90A0A");
+            error_username= true;
+        }
+
+    }
+    function checkpass(){
+        var pattern = /^[A-Za-z0-9\d=!\-@._*]*$/;
+        var pass = $("#password").val();
+        var password_length= $("#password").val().length;
+        
+        if(password_length < 8  && pattern.test(pass) ){
+            
+            $("#pass_check").html("Atleast 8 characters required");
+            $("#pass_check").show();
+            $("#password").css("border","2px solid #F90A0A");
+            error_password= true;
+            
+        }else{
+            $("#pass_check").hide();
+            $("#password").css("border","2px solid #34F458");
+
+        }
+    }
+    function checkuem2(){
+        var pattern = /^[A-Za-z0-9\d=!\-@._*]*$/;
+        var chkem2 =$("#username2").val()
+        if(pattern.test(chkem2) && chkem2 !==''){
+            $("#user_check2").hide();
+            $("#username2").css("border","2px solid #34F458");
+        }else{
+            $("#user_check2").html("Invalid email");
+            $("#user_check2").show();
+            $("#username2").css("border","2px solid #F90A0A");
+            error_username2= true;
+        }
+
+    }
+    function checkpass2(){
+        var pattern = /^[A-Za-z0-9\d=!\-@._*]*$/;
+        var pass2 = $("#password2").val();
+        var password_length= $("#password2").val().length;
+        if(password_length < 8  && pattern.test(pass2)){
+            $("#pass_check2").html("Atleast 8 characters required");
+            $("#pass_check2").show();
+            $("#password2").css("border","2px solid #F90A0A");
+            error_password= true;
+            
+        }else{
+            $("#pass_check2").hide();
+            $("#password2").css("border","2px solid #34F458");
+
+        }
+    }
+    function  checkpass3(){
+    var pass= $("#password2").val()
+    var retype= $("#password3").val();
+    if(pass !== retype){
+        $("#pass_check3").html("Password did'nt match");
+        $("#pass_check3").show();
+        $("#password3").css("border-bottom","2px solid #F90A0A");
+        error_password3=true;
+    }else{
+        $("#pass_check3").hide();
+        $("#password3").css("border-bottom","2px solid #34F458");
+    }
+}
+
+$("#loginb").click(function(){
+
+var error_password= false ;
+var error_username = false;
+
+
+    checkuem();
+    checkpass();
+
+    if(error_password === false && error_username=== false )   {
+          
+          return true;
+          $("#loginb").attr('href', 'first.html')
+
+      }   else{
+          alert("Please fill the form Correctly");
+          return false;
+      } 
+
+
+        });
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
+
+<?php
+
+include 'connection.php';
+?>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    
+    <title>All </title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
+
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                   <a href="first.html"> <img src="images/logo1.png" width="125px"> </a>
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li> <a href="first.html">Home</a> </li>
+                        <li> <a href="products.html">Products</a> </li>
+                        <li> <a href="">Contacts</a> </li>
+                        <li> <a href="account-customer.html">Account</a> </li>
+                        <li> <a href="">About</a> </li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" class="cart"></a>
+                <img src="images/menuicon.png" class="menu-icon" onclick="menutoggle()" >
+            </div>
+            
+
+        </div>
+   </div>
+   
+<section>
+   
+    <div class="content">
+        <h3 style="color: azure; font-size: medium;font-weight:inherit; text-align: center;"> Complete the Registration form</h3><br><br> 
+
+
+    <div class="cn">
+        <h3>Sign Up / Sign In</h3>
+        <form id="regi">
+            <div>
+                <label>First Name</label>
+                <input type="text" id="form_fname" value="" required>
+                <span class="error_form" id="fname_error_message"></span>
+                
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" id="form_sname" value="" required>
+                <span class="error_form" id="sname_error_message"></span>
+                
+            </div>
+            <div>
+                <label> Email.Id</label>
+                <input type="email" id="form_email" value="" required>
+                <span class="error_form" id="email_error_message"></span>
+               
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" id="form_password" value="" required>
+                <span class="error_form" id="password_error_message"></span>
+                
+            </div>
+            <div>
+                <label>Re-Enter password</label>
+                <input type="text" id="form_retype_password" value="" required>
+                <span class="error_form" id="retype_password_error_message"></span>
+                
+            </div>
+            <div><br>
+            <input type="submit" value="Register" id="reg">
+        </div>
+        </form>
+    </div>
+
+</div>
+    
+    
+</section>
+
+<!--------------FOOTER ----------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and IOS mobile</p>
+                <div class="app-logo">
+                    <img src="images/applo.png">
+                </div>
+            </div>
+            <div class="footer-col-2" style="float: left;">
+                <img src="images/logo01.png">
+                <p>Seven Seas E-commerce Ltd. ,buy exclusive with utmost satisfaction </p>
+            </div>
+            <div class="footer-col-3" style="float: right;">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog posts</li>
+                    <li>Return policy</li>
+                    <li>Join affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4" style="float: right;">
+                <h3>Follow us </h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>YouTube</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+         <hr>
+        <p class= "Copyright">Copy-Right Anubhab &#xa9 </p>
+    </div>
+</div>
+<!-----Java script for validation----------------------------->
+
+
+<script type="text/javascript">
+$(function(){
+    $("#fname_error_message").hide();
+    $("#sname_error_message").hide();
+    $("#email_error_message").hide();
+    $("#password_error_message").hide();
+    $("#retype_password_error_message").hide();
+
+    var error_fname= false;
+    var error_sname=false;
+    var error_email=false;
+    var error_password=false;
+    var error_retype_password=false;
+
+    $("#form_fname").focusout(function(){
+         check_fname();
+    });
+    $("#form_sname").focusout(function(){
+         check_sname();
+    });
+    $("#form_email").focusout(function(){
+         check_email();
+    });
+    $("#form_password").focusout(function(){
+         check_password();
+    });
+    $("#form_retype_password").focusout(function(){
+         check_retype_password();
+    });
+    
+    function check_fname(){
+        var pattern = /^[a-zA-Z]*$/;
+        var fname =$("#form_fname").val()
+        if(pattern.test(fname) && fname!==''){
+            $("#fname_error_message").hide();
+            $("#form_fname").css("border-bottom","2px solid #34F458");
+        }else{
+            $("#fname_error_message").html("Should contain only characters");
+            $("#fname_error_message").show();
+            $("#form_fname").css("border-bottom","2px solid #F90A0A");
+            error_fname= true;
+        }
+
+    }
+
+    function check_sname(){
+        var pattern = /^[a-zA-Z]*$/;
+        var sname =$("#form_sname").val()
+        if(pattern.test(sname) && sname!==''){
+            $("#sname_error_message").hide();
+            $("#form_sname").css("border-bottom","2px solid #34F458");
+        }else{
+            $("#sname_error_message").html("Should contain only characters");
+            $("#sname_error_message").show();
+            $("#form_sname").css("border-bottom","2px solid #F90A0A");
+            error_sname= true;
+        }
+
+    }
+    function check_password(){
+        var pattern = /^[A-Za-z0-9\d=!\-@._*]*$/;
+        var pass = $("#form_password").val();
+        var password_length= $("#form_password").val().length;
+        if(password_length < 8  && pattern.test(pass) ){
+            $("#password_error_message").html("Atleast 8 characters required");
+            $("#password_error_message").show();
+            $("#form_password").css("border-bottom","2px solid #F90A0A");
+            error_password= true;
+            
+        }else{
+            $("#password_error_message").hide();
+            $("#form_password").css("border-bottom","2px solid #34F458");
+
+        }
+    }
+
+function check_retype_password(){
+    var pass= $("#form_password").val()
+    var retype= $("#form_retype_password").val();
+    if(pass !== retype){
+        $("#retype_password_error_message").html("Password did'nt match");
+        $("#retype_password_error_message").show();
+        $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
+        error_retype_password=true;
+    }else{
+        $("#retype_password_error_message").hide();
+        $("#form_retype_password").css("border-bottom","2px solid #34F458");
+    }
+}
+     
+   function check_email(){
+       var pattern= /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+       var email = $("#form_email").val();
+       if(pattern.test(email) && email !== ""){
+           $("#email_eror_message").hide();
+           $("#form_email").css("border-bottom","2px solid #34F458" );
+       }else{
+           $("email_error_message").html("Invalid Email");
+           $("#email_eror_message").show();
+           $("#form_email").css("border-bottom","2px solid #F90A0A");
+           error_email= true;
+       }
+   }
+     $("#reg").click(function(){
+            
+     error_fname= false;
+     error_sname=false;
+     error_email=false;
+     error_password=false;
+     error_retype_password=false;
+
+     check_fname();
+     check_sname();
+     check_password();
+     check_retype_password();
+     check_email();
+  
+      if(error_fname === false && error_email=== false && error_password === false && error_retype_password=== false && error_sname=== false)   {
+          alert("Registration successful");
+          return true;
+
+      }   else{
+          alert("Please fill the form Correctly");
+          return false;
+      } 
+
+
+        });
+
+
+
+
+
+
+
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------JS FOR toggle form------------>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    
+    <title>All </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    
+
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo1.png" width="125px">
+                </div>
+                <nav>
+                    <ul id="menuitems">
+                        <li> <a href="first.html">Home</a> </li>
+                        <li> <a href="products.html">Products</a> </li>
+                        <li> <a href="">Contacts</a> </li>
+                        <li> <a href="account-customer.html">Account</a> </li>
+                        <li> <a href="">About</a> </li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" class="cart"></a>
+                <img src="images/menuicon.png" class="menu-icon" onclick="menutoggle()" >
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------account page===============-->
+ 
+
+
+<div class="small-container0">
+    <div class="row">
+         <div class col-01>
+            <h3 style="width: 100%;">Congrats!! Category Succesfully Added </h3><br><br>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add products and wait for verification.</h4><br><br>
+            <a href="adminproductsadd.html" class="btn" style="text-align:center;padding-left: 100px;padding-right: 100px;margin-left: 10px;">Add products &#8594;</a>
+        </div>
+    </div>
+    
+</div>
+
+    
+
+
+        
+
+<!--------------FOOTER ----------------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and IOS mobile</p>
+                <div class="app-logo">
+                    <img src="images/applo.png">
+                </div>
+            </div>
+            <div class="footer-col-2" style="float: left;">
+                <img src="images/logo01.png">
+                <p>Seven Seas E-commerce Ltd. ,buy exclusive with utmost satisfaction </p>
+            </div>
+            <div class="footer-col-3" style="float: right;">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog posts</li>
+                    <li>Return policy</li>
+                    <li>Join affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4" style="float: right;">
+                <h3>Follow us </h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>YouTube</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+         <hr>
+        <p class= "Copyright">Copy-Right Anubhab &#xa9 </p>
+    </div>
+</div>
+<!-----JS FOR TOGGLE MENU----------------------------->
+<script>
+    var menuitems = doc.getElementByID("menuitems");
+    menuitems.style.maxHeight = "0px" ;
+    function menutoggle(){
+        if (menuitems.style.maxHeight == "0px")
+        {
+            menuitems.style.maxHeight = "200px" ;
+        }
+        else
+        {
+            menuitems.style.maxHeight = "0px" ;
+        }
+    }
+</script>
+<!-------------------------JS FOR toggle form------------>
+
+<script>
+
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var indicator = document.getElementById("indicator");
+
+      function register(){
+          RegForm.style.transform = "translateX(0px)";
+          LoginForm.style.transform = "translateX(0px)";
+          indicator.style.transform = "translateX(100px)";
+         
+      }
+      function login()
+      {
+          RegForm.style.transform = "translateX(300px)";
+          LoginForm.style.transform = "translateX(300px)";
+          indicator.style.transform = "translateX(0px)";
+         
+      }
+
+
+
+</script>
+
+</body>
+
+</html>
